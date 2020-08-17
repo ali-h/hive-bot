@@ -30,47 +30,6 @@ function convert2VotingWeight(votingPercentage) {
   return Math.min(Math.floor(votingPercentage.toFixed(2) * 100), 10000);
 }
 
-function isValidLink(link) {
-  var res_hive = link.match(/^https?:\/\/(www\.)?hive\.blog\//i);
-  if (res_hive) {
-    return link.match(/^https?:\/\/(www\.)?hive\.blog\//i);
-  }
-  else {
-    var res_peakd = link.match(/^https?:\/\/(www\.)?peakd\.com\//i);
-    if (res_peakd) {
-      return link.match(/^https?:\/\/(www\.)?peakd\.com\//i);
-    }
-  }
-}
-
-/**
- * Should input a full article link and return the username of the author
- * @param {string} ValidLink 
- */
-function extractUsernameFromLink(ValidLink) {
-  if (isValidLink(ValidLink)) {
-    const usernamePos = ValidLink.search(/\/@.+\//);
-    if (usernamePos === -1) return;
-
-    const firstPart = ValidLink.slice(usernamePos + 2); // adding 2 to remove "/@"
-    return firstPart.slice(0, firstPart.search('/'));
-  }
-}
-
-/**
- * Should input a full article link and return the permlink of the article
- * @param {string} ValidLink 
- */
-function extractPermlinkFromLink(ValidLink) {
-  if (isValidLink(ValidLink)) {
-    const usernamePos = ValidLink.search(/\/@.+\//);
-    if (usernamePos === -1) return;
-
-    const firstPart = ValidLink.slice(usernamePos + 1); // adding 1 to remove the first "/"
-    return firstPart.slice(firstPart.search('/') + 1).replace('/', '').replace('#', '');
-  }
-}
-
 class Responder {
   constructor({targetUsername, targetPermlink, transferMemo, responderUsername, postingKey, activeKey}) {
     this.targetUsername = targetUsername;
@@ -224,29 +183,6 @@ class Responder {
       targetPermlink,
       votingWeight,
     );
-  }
-
-// Upvote on Memo functions
-
-  upvoteOnMemo(votingPercentage = 100.0) {
-    const customTargetUsername = extractUsernameFromLink(this.transferMemo);
-    const customTargetPermlink = extractPermlinkFromLink(this.transferMemo);
-
-    return this.upvote(votingPercentage, customTargetUsername, customTargetPermlink);
-  }
-
-  downvoteOnMemo(votingPercentage = 100.0) {
-    const customTargetUsername = extractUsernameFromLink(this.transferMemo);
-    const customTargetPermlink = extractPermlinkFromLink(this.transferMemo);
-
-    return this.downvote(votingPercentage, customTargetUsername, customTargetPermlink);
-  }
-
-  commentOnMemo(message) {
-    const customTargetUsername = extractUsernameFromLink(this.transferMemo);
-    const customTargetPermlink = extractPermlinkFromLink(this.transferMemo);
-
-    return this.comment(message, customTargetUsername, customTargetPermlink);
   }
 }
 
