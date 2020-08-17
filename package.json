@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/alihassanah/hive-bot#readme",
   "dependencies": {
-    "@hivechain/hivejs": "^1.0.4"
+    "@hivechain/hivejs": "^1.0.4",
+    "bluebird": "^3.7.2"
   }
 }
