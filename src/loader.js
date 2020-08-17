@@ -61,4 +61,4 @@ class HiveBot {
   }
 }
 
-module.exports.HiveBot = HiveBot
+module.exports.HiveBot = HiveBot;
