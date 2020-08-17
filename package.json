@@ -1,0 +1,24 @@
+{
+  "name": "hive-bot",
+  "version": "1.0.0",
+  "description": "Easy, real-time automation on top of Hive Blockchain",
+  "main": "src/loader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alihassanah/hive-bot.git"
+  },
+  "keywords": [
+    "hive",
+    "blockchain",
+    "bot-framework"
+  ],
+  "author": "Ali H",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alihassanah/hive-bot/issues"
+  },
+  "homepage": "https://github.com/alihassanah/hive-bot#readme"
+}
