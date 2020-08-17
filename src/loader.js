@@ -32,9 +32,11 @@ class HiveBot {
     this.config = {};
     this.node = node;
 
-    if (!username) {
-      throw(new Error('Define your username as the first param of HiveBot constructor'));
-    }
+    // no need of username if observing only
+    
+    // if (!username) {
+    //   throw(new Error('Define your username as the first param of HiveBot constructor'));
+    // }
   }
 
   onDeposit(...args) {
