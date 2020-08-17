@@ -226,6 +226,8 @@ class Responder {
     );
   }
 
+// Upvote on Memo functions
+
   upvoteOnMemo(votingPercentage = 100.0) {
     const customTargetUsername = extractUsernameFromLink(this.transferMemo);
     const customTargetPermlink = extractPermlinkFromLink(this.transferMemo);
@@ -248,4 +250,4 @@ class Responder {
   }
 }
 
-module.exports.Responder = Responder
+module.exports.Responder = Responder;
