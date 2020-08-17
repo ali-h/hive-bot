@@ -42,6 +42,7 @@ bot.start();
 Here you can find some sample codes of things you can do with HiveBot.
 
 - Depositing HIVE or HBD from users [click here](https://github.com/alihassanah/hive-bot/blob/master/examples/depositNotify.js)
+- Notifying on every Deposit, Comment & Post (without arguments) [click here](https://github.com/alihassanah/hive-bot/blob/master/examples/observingBlockchain.js)
 - Auto voting on every new post from a list of users [click here](https://github.com/alihassanah/hive-bot/blob/master/examples/voterBot.js)
 - Change RPC node [click here](https://github.com/alihassanah/hive-bot/blob/master/examples/changeNode.js)
 - Error handling [click here](https://github.com/alihassanah/hive-bot/blob/master/examples/errorHandling.js)
