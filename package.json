@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/alihassanah/hive-bot/issues"
   },
-  "homepage": "https://github.com/alihassanah/hive-bot#readme"
+  "homepage": "https://github.com/alihassanah/hive-bot#readme",
+  "dependencies": {
+    "@hivechain/hivejs": "^1.0.4"
+  }
 }
