@@ -69,6 +69,52 @@ class HiveBotCore {
       }
     }
   }
+
+  /**
+   * Resetting the streamOperations automatically after 5s
+   * Expected scenario is when a node is failing
+   */
+  resetOperations() {
+    setTimeout(() => {
+      this.init();
+    }, 5000);
+  }
+
+  init() {
+    if (this.node) {
+      hivejs.api.setOptions({ url: this.node });
+    }
+
+    return new Promise((resolve, reject) => {
+      hivejs.api.streamOperations((err, res) => {
+        if (err) {
+          console.log('Something went wrong with streamOperations method of hivejs');
+          console.log('Attempting to reset the connection...');
+          this.resetOperations();
+          return reject(err);
+        }
+
+        const opType = res[0];
+        const op = res[1];
+
+        switch(opType) {
+          case 'comment':
+            // Both posts and comments are known as 'comment' in this API, so we recognize them by checking the
+            // value of parent_author
+            if (op.parent_author === '') {
+              this.handlePostOperation(op);
+            } else {
+              this.handleCommentOperation(op);
+            }
+            break;
+          case 'transfer':
+            this.handleTransferOperation(op);
+            break;
+        }
+        resolve();
+      });
+    });
+  }
 }
 
-module.exports.HiveBotCore = HiveBotCore
+module.exports.HiveBotCore = HiveBotCore;
