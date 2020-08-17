@@ -154,8 +154,7 @@ Currently Responder provide you these methods to use:
 - Returns: bluebird standard promise
 
 # Further development
-This package is still under development. Feel free to use it and feedback using github issues.
+Similar library was first published by user [p0o](https://github.com/p0o) for Steem Blockchain [Here](https://github.com/p0o/steem-bot) which hasn't been updated in a long time. This is a complete modified version of it to work on Hive. It is still under development, more features will be added in the future. Feel free to use it and feedback using github issues. 
 
 # Versioning
 This package is using Semantic versioning to make sure changes in API will not break your bots.
-
