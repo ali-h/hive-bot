@@ -23,3 +23,42 @@ function getConfig(args) {
     targets,
   };
 }
+
+class HiveBot {
+  constructor({username, postingKey, activeKey, node}) {
+    this.username = username && username.replace(/^@/, '');
+    this.postingKey = postingKey;
+    this.activeKey = activeKey;
+    this.config = {};
+    this.node = node;
+
+    if (!username) {
+      throw(new Error('Define your username as the first param of HiveBot constructor'));
+    }
+  }
+
+  onDeposit(...args) {
+    this.config.deposit = getConfig(args);
+  }
+
+  onPost(...args) {
+    this.config.post = getConfig(args);
+  }
+
+  onComment(...args) {
+    this.config.comment = getConfig(args);
+  }
+
+  start() {
+    const loader = new HiveBotCore({
+      username: this.username,
+      activeKey: this.activeKey,
+      postingKey: this.postingKey,
+      config: this.config, // all the functions called in the bot gets into config for HiveBotCore
+      node: this.node,
+    });
+    return loader.init();
+  }
+}
+
+module.exports.HiveBot = HiveBot
