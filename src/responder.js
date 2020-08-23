@@ -1,5 +1,5 @@
 const hivejs = require('@hivechain/hivejs');
-const HiveBotVersion = '0.6.0';
+const HiveBotVersion = '0.6.1';
 
 /**
  * This function is extracted from condenser source code and does the same tasks with some slight-
