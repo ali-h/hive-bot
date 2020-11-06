@@ -1,6 +1,6 @@
 {
   "name": "hive-bot",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Easy, real-time automation on top of Hive Blockchain",
   "main": "src/loader.js",
   "scripts": {
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/alihassanah/hive-bot#readme",
   "dependencies": {
-    "@hivechain/hivejs": "^1.0.4",
+    "@hiveio/hive-js": "^0.8.10",
     "bluebird": "^3.7.2"
   }
 }
