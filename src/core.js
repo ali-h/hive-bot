@@ -1,4 +1,4 @@
-const hivejs = require('@hivechain/hivejs');
+const hivejs = require('@hiveio/hive-js');
 const { Promise } = require('bluebird');
 const { ALL_USERS } = require('./constants.js'); // get ALL_USERS constant
 const { Responder } = require('./responder');

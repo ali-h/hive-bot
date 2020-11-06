@@ -1,4 +1,4 @@
-const hivejs = require('@hivechain/hivejs');
+const hivejs = require('@hiveio/hive-js');
 const { HiveBotCore } = require('./core.js'); // get HiveBotCore from core.js constant
 const { ALL_USERS } = require('./constants.js'); // get ALL_USERS constant
 
