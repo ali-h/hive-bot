@@ -1,6 +1,6 @@
 {
   "name": "hive-bot",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "Easy, real-time automation on top of Hive Blockchain",
   "main": "src/loader.js",
   "scripts": {
