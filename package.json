@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/alihassanah/hive-bot#readme",
   "dependencies": {
-    "@hiveio/hive-js": "^0.8.10",
+    "@hiveio/hive-js": "^2.0.4",
     "bluebird": "^3.7.2"
   }
 }
